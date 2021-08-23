@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "77476128823",
+    "project_id": "simpbooks",
+    "storage_bucket": "simpbooks.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:77476128823:android:97e115bfaed6a073b0b7b2",
+        "android_client_info": {
+          "package_name": "com.simpbooks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "77476128823-9na9sl0kml3op19p2fhgu3d71m0v47ge.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.simpbooks",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "77476128823-jb6p4edsdal2vksd92igfqt1cibe6due.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAw0kNde3vcSxCv5en8stwH6MHc3QsrtyI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "77476128823-jb6p4edsdal2vksd92igfqt1cibe6due.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "77476128823-6s6o6proavarc711j5jamjivhveimrkv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.muniz.simpbooks"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
