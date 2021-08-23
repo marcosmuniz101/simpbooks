@@ -16,13 +16,9 @@ import { GoogleSignin, GoogleSigninButton, statusCodes } from '@react-native-goo
 
 
 export default function Home({ navigation }) {
-   
+
     const user = auth().currentUser;
     const [livros, setLivros] = useState([]);
-
-
-
-
 
     useEffect(() => {
         database().ref(`usuarios/${user.uid}/livros`).on("value", dataSnapshot => {
@@ -33,28 +29,19 @@ export default function Home({ navigation }) {
                 )
             });
             setLivros(lista);
-
-
         });
     }, []);
-
-
-
     return (
         <View style={styles.container}>
-
-
             <View>
                 <FlatList
                     showsVerticalScrollIndicator={false}
                     data={livros}
                     renderItem={({ item }) => {
                         return (
-                            //onPress={() => navigation.navigate("Perfil")}
-                                
-                            <View  style={styles.card}>
+                            <View style={styles.card}>
                                 <TouchableOpacity onPress={() => navigation.navigate("Editar Livro", { id: item.id })} style={styles.touch}>
-                              
+
                                     <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
                                         <Text style={styles.titulo}>
                                             {item.valor.titulo}
@@ -65,27 +52,14 @@ export default function Home({ navigation }) {
                                     <View View style={{ flexDirection: 'row', justifyContent: 'flex-start' }}>
                                         <Text style={styles.autor}>Autor: {item.valor.autor} </Text>
                                     </View>
-                                    </TouchableOpacity>
-                           
-                            </View>
-                        )
-                    }}
-                />
-
-
+                                </TouchableOpacity>
+                            </View>)
+                    }} />
             </View>
-
             <TouchableOpacity style={styles.buttonCadastrar}
                 onPress={() => navigation.navigate("Cadastrar Livro")}
             ><Text style={styles.textoBt}>+</Text></TouchableOpacity>
-
         </View>
-
-
-
-
-
     );
-
 
 }

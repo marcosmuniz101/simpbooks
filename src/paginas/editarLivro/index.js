@@ -43,8 +43,6 @@ export default function EditarLivro({ navigation, route }, props) {
         });
     }
 
-
-
     function atualizar() {
         database()
             .ref(`usuarios/${user.uid}/livros/${route.params.id}`)
@@ -55,26 +53,21 @@ export default function EditarLivro({ navigation, route }, props) {
                 edicao: edicao,
             })
             .then(() => console.log('Data updated.'));
-            navigation.navigate("Home")
+        navigation.navigate("Home")
     }
 
     function Remover() {
-
         database().ref(`usuarios/${user.uid}/livros/${route.params.id}`).remove()
-        .then(() => console.log('Excluido'));
+            .then(() => console.log('Excluido'));
         navigation.navigate("Home")
-
     }
 
     useEffect(() => {
         Ler();
     }, [])
 
-
-
     return (
-        
-           <View style={styles.container}>
+        <View style={styles.container}>
             <Text style={styles.label}>Título</Text>
             <TextInput
                 style={styles.input}
@@ -91,25 +84,24 @@ export default function EditarLivro({ navigation, route }, props) {
                 onChangeText={setAutor}
                 value={autor}
             />
-             <Text style={styles.label}>Editora</Text>
-        <TextInput
-        style={styles.input}
-        placeholder="Editora do livro"
-        placeholderTextColor='#eca53b'    
-        onChangeText={setEditora}
-        value={editora}
-        />
-         <Text style={styles.label}>Edição</Text>
-        <TextInput
-        style={styles.input}
-        keyboardType= 'number-pad'
-        returnKeyType='done'
-        placeholder="Número da edição"
-        placeholderTextColor='#eca53b'
-        onChangeText={setEdicao}
-        value={edicao}
-        />
-
+            <Text style={styles.label}>Editora</Text>
+            <TextInput
+                style={styles.input}
+                placeholder="Editora do livro"
+                placeholderTextColor='#eca53b'
+                onChangeText={setEditora}
+                value={editora}
+            />
+            <Text style={styles.label}>Edição</Text>
+            <TextInput
+                style={styles.input}
+                keyboardType='number-pad'
+                returnKeyType='done'
+                placeholder="Número da edição"
+                placeholderTextColor='#eca53b'
+                onChangeText={setEdicao}
+                value={edicao}
+            />
             <TouchableOpacity
                 style={styles.buttonSalvar}
                 onPress={atualizar}
@@ -119,15 +111,8 @@ export default function EditarLivro({ navigation, route }, props) {
             <TouchableOpacity
                 style={styles.buttonExcluir}
                 onPress={Remover}            >
-                <Text style={{color: '#F92E6A'}}>Apagar</Text>
+                <Text style={{ color: '#F92E6A' }}>Apagar</Text>
             </TouchableOpacity>
         </View>
-       
-           
-
-        
     )
-
-
-
 }

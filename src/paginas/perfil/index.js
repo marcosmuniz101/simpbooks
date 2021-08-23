@@ -38,12 +38,8 @@ export default function Perfil({ navigation }) {
         });
     };
 
-
     const user = auth().currentUser;
     const reference = database().ref(`/usuarios/${user?.uid}`);
-
-
-
 
     return (
 
@@ -62,24 +58,11 @@ export default function Perfil({ navigation }) {
                 <Text style={{ color: "#F92E", fontWeight: 'bold' }}>Ver meus livros</Text>
             </TouchableOpacity>
 
-
-
             <Text style={styles.sair}
                 onPress={Sair}
             > Sair </Text>
 
-
-
-
-
-
-
-
         </View>
-
-
-
-
 
     );
 

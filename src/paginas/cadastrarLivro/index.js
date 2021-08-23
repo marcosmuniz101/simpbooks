@@ -60,15 +60,10 @@ export default function cadastrarLivro({ navigation }) {
             })
             .then(() => console.log('gravado'))
         navigation.navigate("Home")
-
     }
-
 
     const user = auth().currentUser;
     const reference = database().ref(`/usuarios/${user?.uid}`);
-
-
-
 
     return (
         <View style={styles.container}>
@@ -88,24 +83,24 @@ export default function cadastrarLivro({ navigation }) {
                 onChangeText={setAutor}
                 value={autor}
             />
-             <Text style={styles.label}>Editora</Text>
-        <TextInput
-        style={styles.input}
-        placeholder="Editora do livro"
-        placeholderTextColor='#eca53b'    
-        onChangeText={setEditora}
-        value={editora}
-        />
-         <Text style={styles.label}>Edição</Text>
-        <TextInput
-        style={styles.input}
-        keyboardType= 'number-pad'
-        returnKeyType='done'
-        placeholder="Número da edição"
-        placeholderTextColor='#eca53b'
-        onChangeText={setEdicao}
-        value={edicao}
-        />
+            <Text style={styles.label}>Editora</Text>
+            <TextInput
+                style={styles.input}
+                placeholder="Editora do livro"
+                placeholderTextColor='#eca53b'
+                onChangeText={setEditora}
+                value={editora}
+            />
+            <Text style={styles.label}>Edição</Text>
+            <TextInput
+                style={styles.input}
+                keyboardType='number-pad'
+                returnKeyType='done'
+                placeholder="Número da edição"
+                placeholderTextColor='#eca53b'
+                onChangeText={setEdicao}
+                value={edicao}
+            />
 
             <TouchableOpacity
                 style={styles.buttonSalvar}
@@ -114,10 +109,6 @@ export default function cadastrarLivro({ navigation }) {
                 <Text style={styles.iconButton}>Salvar</Text>
             </TouchableOpacity>
         </View>
-       
-        
 
     );
-
-
 }
